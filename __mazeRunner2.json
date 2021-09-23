@@ -1,0 +1,261 @@
+{
+  "textbook_title": "미로찾기2",
+  "textbook_subtitle": {
+    "stage": "BASIC",
+    "language": "SCRATCH",
+    "level": "2"
+  },
+  "textbook_summary": {
+    "summary_image_src": "__mazeRunner2/_summary.gif",
+    "summary_text": "장애물을 통과하며 최대한 벽에 닿지 않게 미로를 통과하는 게임입니다."
+  },
+  "textbook_contents": [
+    {
+      "step_title": "스프라이트, 배경 및 변수 생성",
+      "step_no": "0",
+      "step_items": [
+        {
+          "title": "배경 설정하기",
+          "tags": ["CRE"],
+          "collapse": false,
+          "images": [
+            {
+              "name": "",
+              "src": "__mazeRunner2/Background.gif",
+              "description": ""
+            }
+          ],
+          "description_title": "",
+          "descriptions": [
+            {
+              "content": "배경탭에서 사각형을 그린 후 지우개로 길을 만들어줍니다.",
+              "sub_content": ""
+            }
+          ]
+        },
+        {
+          "title": "스프라이트 생성하기",
+          "tags": [],
+          "collapse": false,
+          "images": [
+            {
+              "name": "",
+              "src": "__mazeRunner2/_sprite.PNG",
+              "description": ""
+            },
+            {
+              "name": "",
+              "src": "__mazeRunner2/_portal0.gif",
+              "description": ""
+            }
+          ],
+          "description_title": "",
+          "descriptions": [
+            {
+              "content": "직접 조종할 스프라이트, \"깃발\", \"바위\", \"보석\", \"포탈1\", \"포탈2\" 스프라이트를 만듭니다.",
+              "sub_content": ""
+            },
+            {
+              "content": "<p>포탈은 원형 그라데이션 효과를 줍니다.</p>",
+              "sub_content": ""
+            }
+          ]
+        },
+        {
+          "title": "변수 생성하기",
+          "tags": [],
+          "collapse": false,
+          "images": [
+            {
+              "name": "",
+              "src": "__mazeRunner2/variable.PNG",
+              "description": ""
+            }
+          ],
+          "description_title": "",
+          "descriptions": [
+            {
+              "content": "<span style=\"color:orange\">보석</span> 변수와 <span style=\"color:orange\">부딪힌 횟수</span>를 생성합니다.",
+              "sub_content": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step_title": "스프라이트 동작",
+      "step_no": "1",
+      "step_items": [
+        {
+          "title": "플레이어 움직이기",
+          "tags": [
+            "LOG"
+          ],
+          "collapse": false,
+          "images": [
+            {
+              "name": "",
+              "src": "__mazeRunner2/move.gif",
+              "description": ""
+            }
+          ],
+          "description_title": "",
+          "descriptions": [
+            {
+              "content": "플레이어를 방향키를 눌렀을 때 상하좌우로 움직이도록 합니다",
+              "sub_content": ""
+            }
+          ]
+        },
+        {
+          "title": "포탈 설정하기1",
+          "tags": [
+            "LOG"
+          ],
+          "collapse": false,
+          "images": [
+            {
+              "name": "",
+              "src": "__mazeRunner2/_portal1.gif",
+              "description": ""
+            }
+          ],
+          "description_title": "",
+          "descriptions": [
+            {
+              "content": "<p>포탈은 계속해서 색이 변하며, 안으로 들어가는 느낌이 들게 해주세요.</p>",
+              "sub_content": ""
+            }
+          ]
+        },
+        {
+          "title": "포탈 설정하기2",
+          "tags": [
+            "LOG"
+          ],
+          "collapse": false,
+          "images": [
+            {
+              "name": "",
+              "src": "__mazeRunner2/_portal2.gif",
+              "description": ""
+            }
+          ],
+          "description_title": "",
+          "descriptions": [
+            {
+              "content": "<p>포탈에 닿으면 반대편 포탈로 순간이동합니다.</p>",
+              "sub_content": ""
+            }
+          ]
+        },
+        {
+          "title": "바위 설정하기",
+          "tags": [
+            "ALG"
+          ],
+          "collapse": false,
+          "images": [
+            {
+              "name": "",
+              "src": "__mazeRunner2/Rock.gif",
+              "description": ""
+            }
+          ],
+          "description_title": "",
+          "descriptions": [
+            {
+              "content": "길목을 막는 바위 스트라이프는 보석을 모으지 않고 바위에 닿으면 튕겨 나가고, 바위는 \"보석을 모아오세요\" 라고 말합니다.",
+              "sub_content": "=> 이번에는 <span style=\"color:DeepSkyBlue\"> ~에 닿았는가?</span> 블럭을 이용해서 플레이어가 바위에 닿은 것을 감지해보세요."
+            }
+          ]
+        },
+        {
+          "title": "보석 먹기",
+          "tags": [
+            "LOG"
+          ],
+          "collapse": false,
+          "images": [
+            {
+              "name": "",
+              "src": "__mazeRunner2/Jewelry.gif",
+              "description": ""
+            }
+          ],
+          "description_title": "",
+          "descriptions": [
+            {
+              "content": "<p>보석 스트라이프를 생성하여 원하는 숫자만큼 <span style=\"color:orange\">복제</span>합니다.</p><p> 보석 위에서 \"Space\" 키를 누르면 보석이 사라지도록 합니다.</p> <p>보석이 사라질때, <span style=\"color:orange\">보석</span> 변수를 1씩 증가시킵니다.</p>",
+              "sub_content": ""
+            }
+          ]
+        },
+        {
+          "title": "바위 없애기",
+          "tags": [
+            "LOG",
+            "PRO"
+          ],
+          "collapse": false,
+          "images": [
+            {
+              "name": "",
+              "src": "__mazeRunner2/_remove_rock.gif",
+              "description": ""
+            }
+          ],
+          "description_title": "",
+          "descriptions": [
+            {
+              "content": "<span style=\"color:orange\">보석</span>변수를 이용해서 모든 보석을 모았다면, 바위가 사라지게 합니다.",
+              "sub_content": ""
+            }
+          ]
+        },
+        {
+          "title": "부딪힌 횟수 세기",
+          "tags": [
+            "MAT"
+          ],
+          "collapse": false,
+          "images": [
+            {
+              "name": "",
+              "src": "__mazeRunner2/Ouch.gif",
+              "description": ""
+            }
+          ],
+          "description_title": "",
+          "descriptions": [
+            {
+              "content": "<p>걸어가다가 벽에 부딪히면 잠시 \"음..\"이라고 생각하고 뒤로 물러납니다. </p><p>이때 <span style=\"color:orange\">부딪힌 횟수</span> 변수로 부딪힌 횟수를 셉니다.</p>",
+              "sub_content": ""
+            }
+          ]
+        },
+        {
+          "title": "도착 설정하기",
+          "tags": [
+            "LOG"
+          ],
+          "collapse": false,
+          "images": [
+            {
+              "name": "",
+              "src": "__mazeRunner2/TheEnd.gif",
+              "description": ""
+            }
+          ],
+          "description_title": "",
+          "descriptions": [
+            {
+              "content": "<p>깃발에 닿으면 <span style=\"color:purple\">성공! 을 말합니다</span> </p>",
+              "sub_content": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
