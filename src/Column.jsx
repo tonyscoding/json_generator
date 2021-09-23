@@ -1,12 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useDrag } from "react-dnd";
 import { COLUMN } from "./constants";
 import DropZone from "./DropZone";
 import Component from "./Component";
+import Field from "./Field";
 
 const style = {};
 const Column = ({ data, components, handleDrop, path }) => {
   const ref = useRef(null);
+
+  const [content, setContent] = useState("Step title 입력")
 
   const [{ isDragging }, drag] = useDrag({
     type: COLUMN,
@@ -41,6 +44,11 @@ const Column = ({ data, components, handleDrop, path }) => {
       className="base draggable column"
     >
       {data.id}
+      <Field
+        value={content}
+        inputChange={(e) => setContent(e.currentTarget.value)}
+        active = {content}
+      />
       {data.children.map((component, index) => {
         const currentPath = `${path}-${index}`;
 

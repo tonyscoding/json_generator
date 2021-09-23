@@ -21,29 +21,5 @@ export const SIDEBAR_ITEMS = [
       type: "image",
       content: "이미지경로"
     }
-  },
-  {
-    id: shortid.generate(),
-    type: SIDEBAR_ITEM,
-    component: {
-      type: "email",
-      content: "Some email"
-    }
-  },
-  {
-    id: shortid.generate(),
-    type: SIDEBAR_ITEM,
-    component: {
-      type: "phone",
-      content: "Some phone"
-    }
-  },
-  {
-    id: shortid.generate(),
-    type: SIDEBAR_ITEM,
-    component: {
-      type: "image",
-      content: "Some image"
-    }
   }
 ];

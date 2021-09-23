@@ -1,6 +1,9 @@
-# react-dnd-example
-Created with CodeSandbox
+교재 생성기 
 
-https://codesandbox.io/s/github/annezhou920/react-dnd-example/
+ROW component => step_title
+COLUMN component => step_items []
 
-https://medium.com/kustomerengineering/building-complex-nested-drag-and-drop-user-interfaces-with-react-dnd-87ae5b72c803
+한개의 ROW component는 무조건 1개의 COLUMN component를 탑재 해야한다. 
+
+이로서 현재 JSon 텍스트북을 보다 쉽게 생성 할 수 있다. 
+
