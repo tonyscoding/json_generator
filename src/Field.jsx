@@ -1,13 +1,5 @@
 import React, { useState } from 'react';
-
-const style_fix = {
-	backgroundColor: 'white',
-	
-}
-
-const style_change = {
-	backgroundColor: 'yellow',
-}
+import classNames from "classnames";
 
 export const Field = (props) => {
 
@@ -21,12 +13,12 @@ export const Field = (props) => {
     }
 
     return (
-      <div style = {style_fix}>
+      <div className="fieldfix">
         {
             fieldinput ?
             <input value = {props.value} onChange = {props.inputChange} onBlur = {blurClick} autoFocus/>
             :
-            <div onDoubleClick = {doubleClick} style = {style_change}>
+            <div onDoubleClick = {doubleClick} className="fieldchange">
             {props.value}
           </div>
         }

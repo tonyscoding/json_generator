@@ -9,7 +9,7 @@ const style = {};
 const Column = ({ data, components, handleDrop, path }) => {
   const ref = useRef(null);
 
-  const [content, setContent] = useState("Step title 입력")
+  const [content, setContent] = useState("Step item title 입력")
 
   const [{ isDragging }, drag] = useDrag({
     type: COLUMN,

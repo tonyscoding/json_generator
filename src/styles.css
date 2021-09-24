@@ -40,8 +40,7 @@ body {
   transition: 200ms all;
 }
 
-.dropZone:nth-of-type(2n) {
-  display: none;
+.dropZone:nth-of-type(2n+1) {
 }
 
 .dropZone.horizontalDrag {
@@ -120,4 +119,12 @@ body {
   z-index: 1;
   padding: 10px;
   background: lightseagreen;
+}
+
+.fieldfix {
+  background: white,
+}
+
+.fieldchange {
+  background: yellow;
 }
