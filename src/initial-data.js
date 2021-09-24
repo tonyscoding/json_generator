@@ -12,18 +12,22 @@ const initialData = {
     {
       type: ROW,
       id: "row0",
+      content: "step_title 입력하세요",
       children: [
         {
           type: COLUMN,
           id: "column0",
+          content: "step_title_title 입력하세요",
           children: [
             {
               type: COMPONENT,
-              id: "component0"
+              id: "component0",
+              content: "description content를 입력하세요"
             },
             {
               type: COMPONENT,
-              id: "component1"
+              id: "component1",
+              content: "description content를 입력하세요"
             }
           ]
         }
@@ -32,18 +36,22 @@ const initialData = {
     {
       type: ROW,
       id: "row1",
+      content: "step_title 입력하세요",
       children: [
         {
           type: COLUMN,
           id: "column2",
+          content: "step_title_title 입력하세요",
           children: [
             {
               type: COMPONENT,
-              id: "component0"
+              id: "component0",
+              content: "description content를 입력하세요"
             },
             {
               type: COMPONENT,
-              id: "component1"
+              id: "component1",
+              content: "description content를 입력하세요"
             }
           ]
         }

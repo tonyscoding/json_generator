@@ -5,7 +5,7 @@ import { useDrag } from "react-dnd";
 const SideBarItem = ({ data }) => {
   const [{ opacity }, drag] = useDrag({
     type: SIDEBAR_ITEM,
-    item: { data },
+    item: { data, content: "이미지 경로나 설명을 써주세요." },
     collect: monitor => ({
       opacity: monitor.isDragging() ? 0.4 : 1
     })

@@ -15,8 +15,8 @@ import Field from "./Field";
 
 import { SIDEBAR_ITEMS, SIDEBAR_ITEM, COMPONENT, COLUMN } from "./constants";
 import shortid from "shortid";
+import { build_to_json, save_to_file } from "./build_json";
 // import Title from "./Title";
-
 
 
 const Container = () => {
@@ -30,8 +30,17 @@ const Container = () => {
   const [level, setLevel] = useState(initialTitle.level);
   
   const savetojson = () => {
-    console.log(title, stage, language, level);
-    console.log(layout, components)
+    // console.log(title, stage, language, level);
+    // console.log(layout);
+    const result = build_to_json([title, stage, language, level], layout);
+    const help = {
+      "textbook_summary": {
+        "summary_image_src": "",
+        "summary_text": ""
+      }
+    }
+    save_to_file(result);
+    // console.log(result);
   }
 
   const handleDropToTrashBin = useCallback(
@@ -45,7 +54,7 @@ const Container = () => {
   const handleDrop = useCallback(
     (dropZone, item_data) => {
       console.log('dropZone', dropZone)
-      console.log('item_data', item_data)
+      console.log('item_data', item_data) 
       var item = item_data.data;
       if (item === undefined) {
           item = item_data;

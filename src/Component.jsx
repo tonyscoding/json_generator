@@ -11,7 +11,6 @@ const style = {
 };
 const Component = ({ data, components, path }) => {
   const ref = useRef(null);
-  const [fieldinput, setFieldinput] = useState(false);
 
   const [{ isDragging }, drag] = useDrag({
     type: COMPONENT, 
@@ -25,7 +24,12 @@ const Component = ({ data, components, path }) => {
   drag(ref);
 
   // const component = components[data.id];
-  const [content, setComponent] = useState(components[data.id].content)
+  const [content, setContent] = useState(components[data.id].content)
+
+  const handle_input_change = (e) => {
+    setContent(e.currentTarget.value);
+    data.content = content;
+  }
 
   return (
     <div
@@ -37,8 +41,7 @@ const Component = ({ data, components, path }) => {
       <div>
         <Field
           value={content}
-          fieldinput={fieldinput}
-          inputChange={(e) => setComponent(e.currentTarget.value)}
+          inputChange={handle_input_change}
           active = {content}
           />
       </div>

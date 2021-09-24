@@ -37,6 +37,11 @@ const Column = ({ data, components, handleDrop, path }) => {
     );
   };
 
+  const handle_input_change = (e) => {
+    setContent(e.currentTarget.value);
+    data.content = content;
+  }
+
   return (
     <div
       ref={ref}
@@ -46,7 +51,7 @@ const Column = ({ data, components, handleDrop, path }) => {
       {data.id}
       <Field
         value={content}
-        inputChange={(e) => setContent(e.currentTarget.value)}
+        inputChange={handle_input_change}
         active = {content}
       />
       {data.children.map((component, index) => {

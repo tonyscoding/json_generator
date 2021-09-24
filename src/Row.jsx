@@ -15,6 +15,7 @@ const Row = ({ data, components, handleDrop, path }) => {
     item: {
       id: data.id,
       children: data.children,
+      content: content,
       path
     },
     collect: monitor => ({
@@ -24,6 +25,10 @@ const Row = ({ data, components, handleDrop, path }) => {
 
   const opacity = isDragging ? 0 : 1;
   drag(ref);
+
+  const update_content = () => {
+    data.content = content;
+  }
 
   const renderColumn = (column, currentPath) => {
     return (
@@ -37,12 +42,17 @@ const Row = ({ data, components, handleDrop, path }) => {
     );
   };
 
+  const handle_input_change = (e) => {
+    setContent(e.currentTarget.value);
+    data.content = content;
+  }
+
   return (
     <div ref={ref} style={{ ...style, opacity }} className="base draggable row">
       {data.id}
         <Field 
           value={content}
-          inputChange={(e) => setContent(e.currentTarget.value)}
+          inputChange={handle_input_change}
           active = {content}
         />
       <div className="columns">
