@@ -10,12 +10,18 @@ body {
 }
 
 .sideBar {
-  flex: 0 0 1;
-  width: 200px;
   padding: 10px;
+  height: 100%;
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black */
   border-right: 1px solid #111;
-  height: 100vh;
   background: #e1e1e1;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 10px;
 }
 
 .sideBarItem {
@@ -31,6 +37,7 @@ body {
   flex: 1 1 auto;
   padding: 0 20px;
   margin: 20px;
+  margin-left: 200px;
   border: 1px solid green;
 }
 
@@ -126,5 +133,12 @@ body {
 }
 
 .fieldchange {
+  width: fit-content;
   background: yellow;
+}
+
+.fieldInputBox {
+  width: "300px";
+  height: 50px;
+  background: white;
 }

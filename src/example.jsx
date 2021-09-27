@@ -53,8 +53,8 @@ const Container = () => {
 
   const handleDrop = useCallback(
     (dropZone, item_data) => {
-      console.log('dropZone', dropZone)
-      console.log('item_data', item_data) 
+      // console.log('dropZone', dropZone)
+      // console.log('item_data', item_data) 
       var item = item_data.data;
       if (item === undefined) {
           item = item_data;
@@ -63,7 +63,7 @@ const Container = () => {
       const splitDropZonePath = dropZone.path.split("-");
       const pathToDropZone = splitDropZonePath.slice(0, -1).join("-");
 
-      const newItem = { id: item.id, type: item.type };
+      const newItem = { id: item.id, type: item.type, path: item.path};
       if (item.type === COLUMN) {
         newItem.children = item.children;
       }
@@ -78,7 +78,7 @@ const Container = () => {
         };
         const newItem = {
           id: newComponent.id,
-          type: COMPONENT
+          type: item.component.type
         };
         setComponents({
           ...components,
@@ -146,7 +146,12 @@ const Container = () => {
     );
   };
 
-  
+  // const print_sidebaritem = () => {
+  //   return (Object.values(SIDEBAR_ITEM).map((sideBarItem, index) => {
+  //     console.log(item);
+  //     (<SideBarItem key={sideBarItem.id} data={sideBarItem} />)
+  //   }))
+  // }
 
   // dont use index for key when mapping over items
   // causes this issue - https://github.com/react-dnd/react-dnd/issues/342
@@ -156,6 +161,10 @@ const Container = () => {
         {Object.values(SIDEBAR_ITEMS).map((sideBarItem, index) => (
           <SideBarItem key={sideBarItem.id} data={sideBarItem} />
         ))}
+        <div>
+          <button onClick={savetojson}> Save to json </button>
+          <button onClick={savetojson}> Save to web </button>
+        </div>
       </div>
       <div className="pageContainer">
         <div className="page">
@@ -210,11 +219,6 @@ const Container = () => {
             onDrop={handleDrop}
             isLast
           />
-        </div>
-
-        <div> 
-          <button onClick={savetojson}> Save to json </button>
-          <button onClick={savetojson}> Save to web </button>
         </div>
       </div>
         <div className="fixedBox">

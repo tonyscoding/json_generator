@@ -55,7 +55,7 @@ const Row = ({ data, components, handleDrop, path }) => {
           inputChange={handle_input_change}
           active = {content}
         />
-      <div className="columns">
+      <div >
         {data.children.map((column, index) => {
           const currentPath = `${path}-${index}`;
 
@@ -67,7 +67,7 @@ const Row = ({ data, components, handleDrop, path }) => {
                   childrenCount: data.children.length,
                 }}
                 onDrop={handleDrop}
-                className="horizontalDrag"
+                // className="horizontalDrag"
               />
               {renderColumn(column, currentPath)}
             </React.Fragment>
@@ -79,7 +79,7 @@ const Row = ({ data, components, handleDrop, path }) => {
             childrenCount: data.children.length
           }}
           onDrop={handleDrop}
-          className="horizontalDrag"
+          // className="horizontalDrag"
           isLast
         />
       </div>

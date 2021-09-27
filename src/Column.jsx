@@ -55,6 +55,7 @@ const Column = ({ data, components, handleDrop, path }) => {
         active = {content}
       />
       {data.children.map((component, index) => {
+        
         const currentPath = `${path}-${index}`;
 
         return (

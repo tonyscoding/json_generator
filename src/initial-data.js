@@ -1,4 +1,4 @@
-import { COMPONENT, ROW, COLUMN } from "./constants";
+import { COMPONENT, ROW, COLUMN, IMAGE, DESC, CODE } from "./constants";
 
 const initialTitle = {
   textbook_title: "교재 제목",
@@ -20,12 +20,12 @@ const initialData = {
           content: "step_title_title 입력하세요",
           children: [
             {
-              type: COMPONENT,
+              type: DESC,
               id: "component0",
               content: "description content를 입력하세요"
             },
             {
-              type: COMPONENT,
+              type: DESC,
               id: "component1",
               content: "description content를 입력하세요"
             }
@@ -44,12 +44,12 @@ const initialData = {
           content: "step_title_title 입력하세요",
           children: [
             {
-              type: COMPONENT,
+              type: IMAGE,
               id: "component0",
               content: "description content를 입력하세요"
             },
             {
-              type: COMPONENT,
+              type: CODE,
               id: "component1",
               content: "description content를 입력하세요"
             }

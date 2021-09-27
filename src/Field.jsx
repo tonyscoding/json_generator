@@ -16,11 +16,11 @@ export const Field = (props) => {
       <div className="fieldfix">
         {
             fieldinput ?
-            <input value = {props.value} onChange = {props.inputChange} onBlur = {blurClick} autoFocus/>
+            <textarea value = {props.value} onChange = {props.inputChange} onBlur = {blurClick} autoFocus rows="3" cols="40"/>
             :
             <div onDoubleClick = {doubleClick} className="fieldchange">
-            {props.value}
-          </div>
+              {props.value === "" ? "입력하세요" : props.value}
+            </div>
         }
         {props.children}
       </div>

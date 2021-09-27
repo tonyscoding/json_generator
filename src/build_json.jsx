@@ -1,40 +1,41 @@
 
 
 const form_component = (col) => {
-    var images = [];
-    var descriptions = [];
+    var components = [];
     col.map((comp, index) => {
-        console.log(comp);
-        if (comp.id === "component1") {
+        if (comp.type === "image") {
             const new_image = {
+                "type": "image",
                 "name": "",
                 "src": comp.content,
-                "description": ""
             }
-            images.push(new_image);
-        } else if (comp.id === "component0") {
+            components.push(new_image);
+        } else if (comp.type === "desc") {
             const new_descp = {
-                "content": comp.content,
-                "sub_content": ""
+                "type": "desc",
+                "description": comp.content
             }
-            descriptions.push(new_descp);
+            components.push(new_descp);
+        } else if (comp.type === "code") {
+            const new_code = {
+                "type": "code",
+                "code": "~~~python \n " + comp.content + "\n ~~~ "
+            }
+            components.push(new_code);
         }
     })
-    return [images, descriptions];
+    return components;
 }
 
 const form_col = (row) => {
     var step_items = [];
     row.map((col, index) => {
-        console.log(col);
         const result = form_component(col.children);
         const new_col = {
             "title": col.content,
             "tags": [],
             "collapse": false,
-            "images": result[0],
-            "description_title": "",
-            "descriptions": result[1],
+            "components": result
         }
         step_items.push(new_col);
     })
@@ -44,7 +45,6 @@ const form_col = (row) => {
 const form_row = (contents) => {
     var textbook_contents = []
     contents.map((row, index) => {
-        console.log(row);
         const result = form_col(row.children);
         const new_row = {
             "step_title": row.content,
@@ -58,6 +58,7 @@ const form_row = (contents) => {
 
 
 const text_con = (contents) => {
+    console.log(contents);
     return form_row(contents);
 }
 
