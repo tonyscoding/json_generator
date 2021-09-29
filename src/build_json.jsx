@@ -11,9 +11,10 @@ const form_component = (col) => {
             }
             components.push(new_image);
         } else if (comp.type === "desc") {
+            let descc = comp.content.replaceAll("\n", "<br />")
             const new_descp = {
                 "type": "desc",
-                "description": comp.content
+                "description": descc 
             }
             components.push(new_descp);
         } else if (comp.type === "code") {
