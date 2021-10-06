@@ -20,9 +20,15 @@ const form_component = (col) => {
         } else if (comp.type === "code") {
             const new_code = {
                 "type": "code",
-                "code": "~~~python \n " + comp.content + "\n ~~~ "
+                "code": "~~~python \n" + comp.content + "\n ~~~ "
             }
             components.push(new_code);
+        } else if (comp.type === "table") {
+            const new_table = {
+                "type": "table",
+                "description": comp.content
+            }
+            components.push(new_table)
         }
     })
     return components;

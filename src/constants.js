@@ -7,6 +7,7 @@ export const COMPONENT = "component";
 export const IMAGE = "image";
 export const DESC = "desc";
 export const CODE = "code";
+export const TABLE = "table";
 
 
 export const SIDEBAR_ITEMS = [
@@ -32,6 +33,14 @@ export const SIDEBAR_ITEMS = [
     component: {
       type: CODE,
       content: "코드"
+    }
+  },
+  {
+    id: shortid.generate(),
+    type: SIDEBAR_ITEM,
+    component: {
+      type: TABLE,
+      content: "테이블"
     }
   }
 ];
