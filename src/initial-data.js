@@ -25,7 +25,7 @@ const initialData = {
               content: "description content를 입력하세요"
             },
             {
-              type: DESC,
+              type: CODE,
               id: "component1",
               content: "description content를 입력하세요"
             }
@@ -44,7 +44,7 @@ const initialData = {
           content: "step_title_title 입력하세요",
           children: [
             {
-              type: IMAGE,
+              type: DESC,
               id: "component0",
               content: "description content를 입력하세요"
             },
@@ -59,8 +59,8 @@ const initialData = {
     }
   ],
   components: {
-    component0: { id: "component0", type: "input", content: "Some input" },
-    component1: { id: "component1", type: "image", content: "Some image" },
+    component0: { id: "component0", type: DESC, content: "Some input" },
+    component1: { id: "component1", type: CODE, content: "Some image" },
   }
 };
 

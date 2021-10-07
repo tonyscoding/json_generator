@@ -12,7 +12,7 @@ import {
   handleRemoveItemFromLayout
 } from "./helpers";
 import Field from "./Field";
-
+import pre_file from "./textbook/data.json";
 import { SIDEBAR_ITEMS, SIDEBAR_ITEM, COMPONENT, COLUMN } from "./constants";
 import shortid from "shortid";
 import { build_to_json, save_to_file } from "./build_json";
@@ -20,33 +20,45 @@ import { build_to_json, save_to_file } from "./build_json";
 
 
 const Container = () => {
-  const initialLayout = initialData.layout;
-  const initialComponents = initialData.components;
+  const initialLayout = pre_file.layout;
+  const initialComponents = pre_file.components;
   const [layout, setLayout] = useState(initialLayout);
   const [components, setComponents] = useState(initialComponents);
   const [title, setTitle] = useState(initialTitle.textbook_title);
   const [stage, setStage] = useState(initialTitle.stage);
   const [language, setLanguage] = useState(initialTitle.language);
   const [level, setLevel] = useState(initialTitle.level);
+
   
   const savetojson = () => {
     // console.log(title, stage, language, level);
     // console.log(layout);
     const result = build_to_json([title, stage, language, level], layout);
-    const help = {
-      "textbook_summary": {
-        "summary_image_src": "",
-        "summary_text": ""
-      }
-    }
     save_to_file(result);
     // console.log(result);
+  }
+
+  const loadfromjson = () => {
+    setLayout(pre_file.layout);
+    setComponents(pre_file.components);
+  }
+
+  const savefornextjob = () => {
+    const result = { 
+      "layout": layout, 
+      "components": components
+    }
+    save_to_file(result);
+    // console.log(components);
+    // console.log(layout);
   }
 
   const handleDropToTrashBin = useCallback(
     (dropZone, item) => {
       const splitItemPath = item.path.split("-");
-      setLayout(handleRemoveItemFromLayout(layout, splitItemPath));
+      const result = handleRemoveItemFromLayout(layout, splitItemPath)
+      console.log(result);
+      setLayout(result);
     },
     [layout]
   );
@@ -78,7 +90,8 @@ const Container = () => {
         };
         const newItem = {
           id: newComponent.id,
-          type: item.component.type
+          type: item.component.type,
+          content: item.component.content
         };
         setComponents({
           ...components,
@@ -163,7 +176,8 @@ const Container = () => {
         ))}
         <div>
           <button onClick={savetojson}> Save to json </button>
-          <button onClick={savetojson}> Save to web </button>
+          <button onClick={savefornextjob}> Save to web </button>
+          <button onClick={loadfromjson}> Load from json </button>
         </div>
       </div>
       <div className="pageContainer">

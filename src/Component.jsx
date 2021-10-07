@@ -24,7 +24,7 @@ const Component = ({ data, components, path }) => {
   drag(ref);
 
   // const component = components[data.id];
-  const [content, setContent] = useState(components[data.id].content)
+  const [content, setContent] = useState(data.content)
 
   const handle_input_change = (e) => {
     setContent(e.currentTarget.value);

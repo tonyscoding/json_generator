@@ -1,0 +1,74 @@
+{
+	"layout": [
+		{
+			"type": "row",
+			"id": "row0",
+			"content": "step_title 입력하세요",
+			"children": [
+				{
+					"type": "column",
+					"id": "column0",
+					"content": "step_title_title 입력하세요",
+					"children": [
+						{
+							"type": "desc",
+							"id": "component0",
+							"content": "ㅁㄴㅇㄻㄴㅇ"
+						},
+						{
+							"type": "code",
+							"id": "component1",
+							"content": "dㄴㄴㄴㄴㄴㄴ"
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "row",
+			"id": "row1",
+			"content": "step_title 입력하세요",
+			"children": [
+				{
+					"type": "column",
+					"id": "column2",
+					"content": "step_title_title 입력하세요",
+					"children": [
+						{
+							"type": "desc",
+							"id": "component0",
+							"content": "ㄴㄴㄴㅇ"
+						},
+						{
+							"type": "code",
+							"id": "component1",
+							"content": "ㅊㅊㅊㅊ"
+						},
+						{
+							"id": "jIvrMLk1D",
+							"type": "code",
+							"content": "코드assd"
+						}
+					]
+				}
+			]
+		}
+	],
+	"components": {
+		"component0": {
+			"id": "component0",
+			"type": "desc",
+			"content": "Some input"
+		},
+		"component1": {
+			"id": "component1",
+			"type": "code",
+			"content": "Some image"
+		},
+		"jIvrMLk1D": {
+			"id": "jIvrMLk1D",
+			"type": "code",
+			"content": "코드"
+		}
+	}
+}
