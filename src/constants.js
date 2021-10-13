@@ -8,6 +8,7 @@ export const IMAGE = "image";
 export const DESC = "desc";
 export const CODE = "code";
 export const TABLE = "table";
+export const LIST = "list";
 
 
 export const SIDEBAR_ITEMS = [
@@ -41,6 +42,14 @@ export const SIDEBAR_ITEMS = [
     component: {
       type: TABLE,
       content: "테이블"
+    }
+  },
+  {
+    id: shortid.generate(),
+    type: SIDEBAR_ITEM,
+    component: {
+      type: LIST,
+      content: "리스트"
     }
   }
 ];

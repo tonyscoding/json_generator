@@ -32,7 +32,7 @@ const Container = () => {
   
   const savetojson = () => {
     // console.log(title, stage, language, level);
-    // console.log(layout);
+    console.log(layout);
     const result = build_to_json([title, stage, language, level], layout);
     save_to_file(result);
     // console.log(result);

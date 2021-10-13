@@ -29,6 +29,12 @@ const form_component = (col) => {
                 "description": comp.content
             }
             components.push(new_table)
+        } else if (comp.type === "list") {
+            const new_list = {
+                "type": "desc",
+                "description": comp.content
+            }
+            components.push(new_list);
         }
     })
     return components;
